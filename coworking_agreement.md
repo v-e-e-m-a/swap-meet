@@ -30,3 +30,6 @@ Veema wants to try to be more communicative and talk more about the project. Olg
 ## Signatures
 Olga Orlova 
 Date: Sept 29, 2025
+
+Veema Jhagru
+Date: 9/29/2025
