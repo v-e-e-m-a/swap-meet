@@ -11,7 +11,7 @@ class Item:
     
     def get_category(self):
         # Returns a string of the class name
-        return str(self.__class__.__name__) #implementation obtained through StackOverflow
+        return "Item" #implementation obtained through StackOverflow
     
     def __str__(self): #Operator overloading the str() function when it passes through an item in the argument
         return f'An object of type {self.get_category()} with id {self.id}.'
