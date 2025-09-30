@@ -49,3 +49,10 @@ class Vendor:
             other_vendor.add(my_item)
 
             return True
+    
+    def get_by_category(self, category):
+        category_list = []
+        for item in self.inventory:
+            if item.get_category() == category:
+                category_list.append(item)
+        return category_list
