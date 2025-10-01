@@ -88,8 +88,33 @@ class Vendor:
             return True
     
     def get_by_category(self, category):
+        if self.inventory == []:
+            return []
         category_list = []
         for item in self.inventory:
             if item.get_category() == category:
                 category_list.append(item)
         return category_list
+    
+    def get_best_by_category(self, category):
+        highest = -1
+        best_item = None 
+        for item in self.inventory:
+            if item.get_category() == category:
+                if item.condition > highest:
+                    highest = item.condition
+                    best_item = item
+        return best_item  
+            
+    def swap_best_by_category(self, other_vendor, my_priority, their_priority):
+       item_to_swap = self.get_best_by_category(their_priority)
+       their_item = other_vendor.get_best_by_category(my_priority)
+
+       if item_to_swap and their_item:
+            self.swap_items(other_vendor, item_to_swap, their_item)
+            return True
+       return False
+
+       
+                                       
+
